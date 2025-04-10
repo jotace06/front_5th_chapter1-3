@@ -20,6 +20,7 @@
     "test:advanced": "vitest advanced",
     "test:ui": "vitest --ui",
     "prepare": "husky",
+    "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
