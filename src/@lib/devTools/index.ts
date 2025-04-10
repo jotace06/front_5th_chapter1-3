@@ -1,1 +1,1 @@
-export * from "./render-counter";
+export * from "./render-counter/render-counter";

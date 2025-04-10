@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-import { useRef } from "../@lib/hooks";
+import { useRef } from "../../hooks";
 
-export const useRenderCounter = () => {
+export const useRenderCount = () => {
   const countRef = useRef(1);
 
   useEffect(() => {

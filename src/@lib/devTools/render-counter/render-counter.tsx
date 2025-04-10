@@ -1,5 +1,5 @@
-import { memo } from "../hocs";
-import { useRenderCounter } from "../../hooks/use-render-counter";
+import { memo } from "../../hocs";
+import { useRenderCount } from "./use-render-count";
 
 interface RenderCounterProps {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ interface RenderCounterProps {
 
 export const RenderCounter: React.FC<RenderCounterProps> = memo(
   ({ children, componentName, borderColor }) => {
-    const count = useRenderCounter();
+    const count = useRenderCount();
 
     return (
       <div
