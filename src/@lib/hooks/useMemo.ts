@@ -4,7 +4,7 @@ import { useRef } from "./useRef";
 
 export function useMemo<T>(
   factory: () => T,
-  _deps: DependencyList,
+  _deps: DependencyList = [],
   _equals = shallowEquals,
 ): T {
   const memoRef = useRef<{
@@ -24,7 +24,7 @@ export function useMemo<T>(
 
   if (!_equals(memoRef.current.deps, _deps)) {
     memoRef.current.value = factory();
-    memoRef.current.deps = _deps;
+    memoRef.current.deps = [..._deps];
   }
 
   return memoRef.current.value as T;
