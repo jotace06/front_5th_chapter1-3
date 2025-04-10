@@ -2,6 +2,10 @@ export function renderLog(message: string) {
   console.log(message);
 }
 
+export function renderLogWithCount(message: string, count: number) {
+  console.log(`${message} rendered: ${count}`);
+}
+
 // 대규모 데이터 생성 함수
 export const generateItems = (count: number, start = 0) => {
   const categories = ["전자기기", "의류", "도서", "식품"];
