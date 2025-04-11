@@ -13,7 +13,7 @@ export function useItems({
   initialCount = 1000,
   count = 1000,
 }: UseItemsOptions = {}) {
-  const [items, setItems] = useState<Item[]>(generateItems(initialCount));
+  const [items, setItems] = useState<Item[]>(() => generateItems(initialCount));
 
   const addItems = useCallback(() => {
     setItems((prevItems) => [
