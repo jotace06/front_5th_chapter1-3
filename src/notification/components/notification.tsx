@@ -10,6 +10,10 @@ interface NotificationProps {
 
 export const Notification: React.FC<NotificationProps> = memo(
   ({ notification, removeNotification }) => {
+    const handleRemoveNotificationClick = () => {
+      removeNotification(notification.id);
+    };
+
     return (
       <RenderCounter componentName="Notification" borderColor="#8A2BE2">
         <div
@@ -26,7 +30,7 @@ export const Notification: React.FC<NotificationProps> = memo(
         >
           {notification.message}
           <button
-            onClick={() => removeNotification(notification.id)}
+            onClick={handleRemoveNotificationClick}
             className="ml-4 text-white hover:text-gray-200"
           >
             닫기
