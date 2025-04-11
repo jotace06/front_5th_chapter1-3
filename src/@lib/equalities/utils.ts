@@ -4,11 +4,10 @@ const isObject = (obj: unknown): obj is Record<string, unknown> => {
   return true;
 };
 
-export function baseEquals<T>(
-  objA: T,
-  objB: T,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  valueComparer: (a: any, b: any) => boolean,
+export function baseEquals(
+  objA: unknown,
+  objB: unknown,
+  valueComparer: (a: unknown, b: unknown) => boolean,
 ): boolean {
   if (Array.isArray(objA) && Array.isArray(objB)) {
     if (objA.length !== objB.length) return false;

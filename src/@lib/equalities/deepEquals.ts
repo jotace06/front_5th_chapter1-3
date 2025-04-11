@@ -1,5 +1,5 @@
 import { baseEquals } from "./utils";
 
-export function deepEquals<T>(objA: T, objB: T): boolean {
+export function deepEquals(objA: unknown, objB: unknown): boolean {
   return baseEquals(objA, objB, deepEquals);
 }
